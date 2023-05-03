@@ -1,14 +1,13 @@
-#include "shape.hpp"
 #include <iostream>
 using namespace std;
+#include "shape.h"
 
 class Triangle : public Shape {
 public:
-    void Fill();
-    void Alloc();
-    void Print();
-
     using Shape::Shape;
+
+    virtual void Fill();
+
     Triangle(int h, char s, string c);
 
 };

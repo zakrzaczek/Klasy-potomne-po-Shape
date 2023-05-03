@@ -1,15 +1,9 @@
-#include "rectangle.hpp"
-#include <iostream>
-using namespace std;
+#include "rectangle.h"
 
 class Border : public Rectangle {
 public:
-    void Fill();
-    void Alloc();
-    void Print();
-
-    using Rectangle::Rectangle;
-    Border(int h, int w, char s, string c);
-    Border(int h, char s, string c);
-
+    int marg;
+    Border(int h, int w, char s, string c, int m);
+    Border(Rectangle p, int m);
+    void Cut();
 };

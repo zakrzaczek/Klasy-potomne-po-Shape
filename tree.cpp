@@ -1,7 +1,7 @@
 #include <iostream>
 
 using namespace std;
-#include "tree.hpp"
+#include "tree.h"
 
 void Tree::printTree() {
   int i, j;
@@ -23,10 +23,10 @@ void Tree::printTree() {
   }
 }
 
-Tree::Tree(int h, char z, string c) {
+Tree::Tree(int h, char s, string c) {
   int j, i;
   height = h;
-  znak = z;
+  symbol = s;
   color = c;
 
   if (c == "red")       color = "\033[1;31m";

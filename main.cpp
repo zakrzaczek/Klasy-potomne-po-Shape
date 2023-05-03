@@ -3,57 +3,35 @@
 
 using namespace std;
 
-#include "forest.hpp"
+#include "forest.h"
 
-
-int Tree::counter = 0;
 int Shape::counter = 0;
 
-int main() {
-  int i, j;
-  
-  /*cout << "\033[0;36m To jest zwykly tekst cyan \033[0m" << endl;
-  cout<< "\033[4;34m To jest podkreslony tekst blue \033[0m"<<endl;
-  cout<< "\033[7;33m To jest inverse tekst yellow \033[0m"<<endl;
+int main()
+{
+	Forest las = Forest(15, 60);
 
-   Tree drzewko(10, '%', "green");
-   drzewko.printTree();
+	Rectangle* sciana = new Rectangle(6, 14, '*', "cyan");
+//	sciana->Print();
+	Rectangle* drzwi = new Rectangle(4, 4, '*', "purple");
+	Rectangle* pien = new Rectangle(3, 3, '*', "red");
+	Border* okno = new Border(3, 6, '*', "blue", 1);
+	Triangle* choinka = new Triangle(6, '*', "green");
+	Trapeze* dach = new Trapeze(4, '*', "purple");
 
-   cout << endl;
+	dach->SetXY(1, 1);
+	las += dach;
+	sciana->SetXY(5, 4);	
+	las += sciana;			
+	drzwi->SetXY(7, 5);	
+	las += drzwi;
+	okno->SetXY(6, 11);
+	las += okno;
 
-  for (j = 0; j < height; j++) {
-    for (i = 0; i < 2 * height - 1; i++)
-      cout << tab[j][i];
-    cout << endl;
-  }
+	las.AddShape(choinka, 3, 25);
+	las.AddShape(pien, 9, 29);
 
-   las
-   int i, j;
 
-   Forest las(15, 60);
-   las.AddTree(5, '%', "green", 2, 2);
-   las.AddTree(7, '@', "red", 3, 15);
-   las.AddTree(8, '*', "blue", 6, 16);
+	las.PrintForest();
 
-   for (j = 0; i < las.H; j++) {
-     for (i = 0; j < las.W; i++) {
-       cout << las.tab[j][i];
-     }
-     cout << endl;
-   }
-   las.PrintForest();
-
-  Rectangle p;*/
-
-  RTriangle rt(2, '\\', "red");
-  Triangle t(5, '^', "green");
-  Rectangle r(9, 7, '#', "yellow");
-  Border b(5, 10, '|', "cyan");
-  
-  rt.Print();
-  t.Print();
-  r.Print();
-  b.Print();
-
-  return 0;
 }

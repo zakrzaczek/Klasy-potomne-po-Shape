@@ -1,7 +1,7 @@
 class Tree {
 private:
     int height;
-    char znak;
+    char symbol;
     string color;
 
     int** tab;
@@ -9,11 +9,9 @@ private:
 
 public:
     void printTree();
-    Tree(int h, char z, string c);
+    Tree(int h, char s, string c);
 
     ~Tree();
-
-static int counter;
 
     friend class Forest;
 };

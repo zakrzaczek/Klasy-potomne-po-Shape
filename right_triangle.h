@@ -1,14 +1,15 @@
-#include "shape.hpp"
 #include <iostream>
 using namespace std;
+#include "shape.h"
+
+//DODAÆ WSZYSTKIE 4 POZYCJE
 
 class RTriangle : public Shape {
 public:
-    void Fill();
-    void Alloc();
-    void Print();
-
     using Shape::Shape;
+
+    virtual void Fill();
+
     RTriangle(int h, char s, string c);
 
 };

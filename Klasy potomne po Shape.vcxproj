@@ -25,16 +25,16 @@
     <ClCompile Include="ractangle.cpp" />
     <ClCompile Include="right_triangle.cpp" />
     <ClCompile Include="shape.cpp" />
-    <ClCompile Include="tree.cpp" />
+    <ClCompile Include="trapeze.cpp" />
     <ClCompile Include="triangle.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="border.h" />
-    <ClInclude Include="forest.hpp" />
-    <ClInclude Include="rectangle.hpp" />
+    <ClInclude Include="forest.h" />
+    <ClInclude Include="rectangle.h" />
     <ClInclude Include="right_triangle.h" />
-    <ClInclude Include="shape.hpp" />
-    <ClInclude Include="tree.hpp" />
+    <ClInclude Include="shape.h" />
+    <ClInclude Include="trapeze.h" />
     <ClInclude Include="triangle.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

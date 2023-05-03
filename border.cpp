@@ -2,59 +2,19 @@
 #include <iostream>
 using namespace std;
 
-void Border::Fill() {
-    int i, j;
-
-    for (i = 0, j = 0; i < width; i++)
-        tab[j][i] = 1;
-   
-    for (j = 1; j < height - 1; j++) {
-            tab[j][0] = 1;
-            tab[j][width-1] = 1;
-    }
-    
-    for (i = 0, j = height - 1; i < width; i++)
-        tab[j][i] = 1;
-
-};
-
-void Border::Alloc() {
-    int i, j;
-
-    tab = new int* [height];
-    for (j = 0; j < height; j++) {
-        tab[j] = new int[width];
-        for (i = 0; i < width; i++)
-            tab[j][i] = 0;
-    }
+Border::Border(int h, int w, char s, string c, int m) : Rectangle(h, w, s, c) {
+    //cout << "Konstruktor border" << endl;
+    marg = m;
+    Cut();
 }
-
-
-void Border::Print() {
+Border::Border(Rectangle p, int m) : Rectangle(p) {
+    //cout << "Konstruktor border z kopii Rectangle" << endl;
+    marg = m;
+    Cut();
+}
+void Border::Cut() {
     int i, j;
-
-    for (j = 0; j < height; j++) {
-        for (i = 0; i < width; i++) {
-            if (tab[j][i]) {
-                cout << color << znak;
-            }
-            else {
-                cout << " ";
-            }
-        }
-        cout << endl;
-    }
-    cout << "\033[0m" << endl;
-}
-
-Border::Border(int h, int w, char s, string c) : Rectangle(h, w, s, c) {
-    cout << "Konstruktor Rectangle Border" << endl;
-    Alloc();
-    Fill();
-}
-
-Border::Border(int h, char s, string c) : Rectangle(h, s, c) {
-    cout << "Konstruktor Square Border" << endl;
-    Alloc();
-    Fill();
+    for (j = marg; j < height - marg; j++)
+        for (i = marg; i < width - marg; i++)
+            tab[j][i] = -1; //w print dla -1 cout<<" "<<endl;
 }
